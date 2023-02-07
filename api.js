@@ -24,7 +24,7 @@ cron.schedule("*/5 * * * *", function() {
         driver: sqlite3.Database
       });
     
-      await db.exec('CREATE TABLE IF NOT EXISTS tracking (timestamp INTEGER NOT NULL, device_id INTEGER NOT NULL, latitude REAL, longitude REAL, PRIMARY KEY (timestamp, device_id))');
+      await db.exec('CREATE TABLE IF NOT EXISTS tracking (timestamp TEXT NOT NULL, device_id TEXT NOT NULL, latitude REAL, longitude REAL, PRIMARY KEY (timestamp, device_id))');
       response.forEach(async element => {
         await db.exec(`INSERT OR IGNORE INTO tracking VALUES (${element.timestamp}, "${deviceId}", ${element.lat}, ${element.long})`)
       });
