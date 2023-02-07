@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+    <html>
+      <head>
+          <title>Google Maps API</title>
+          <script>
+              var dataPoints = [{"timestamp":"1675772937","device_id":"6580287830916791614","latitude":50.0947808,"longitude":8.6960885},{"timestamp":"1675769201","device_id":"6580287830916791614","latitude":50.0922094,"longitude":8.6968508},{"timestamp":"1675765442","device_id":"6580287830916791614","latitude":50.0922094,"longitude":8.6968508},{"timestamp":"1675761777","device_id":"6580287830916791614","latitude":50.0922094,"longitude":8.6968508},{"timestamp":"1675757862","device_id":"6580287830916791614","latitude":50.0922094,"longitude":8.6968508},{"timestamp":"1675754692","device_id":"6580287830916791614","latitude":50.0922094,"longitude":8.6968508},{"timestamp":"1675750911","device_id":"6580287830916791614","latitude":50.0922094,"longitude":8.6968508},{"timestamp":"1675747677","device_id":"6580287830916791614","latitude":50.0922094,"longitude":8.6968508},{"timestamp":"1675744132","device_id":"6580287830916791614","latitude":50.0922094,"longitude":8.6968508},{"timestamp":"1675740283","device_id":"6580287830916791614","latitude":50.0922094,"longitude":8.6968508},{"timestamp":"1675736846","device_id":"6580287830916791614","latitude":50.0922094,"longitude":8.6968508},{"timestamp":"1675733051","device_id":"6580287830916791614","latitude":50.0922094,"longitude":8.6968508},{"timestamp":"1675729450","device_id":"6580287830916791614","latitude":50.0922094,"longitude":8.6968508},{"timestamp":"1675726086","device_id":"6580287830916791614","latitude":50.0922094,"longitude":8.6968508},{"timestamp":"1675722377","device_id":"6580287830916791614","latitude":50.0922094,"longitude":8.6968508},{"timestamp":"1675718911","device_id":"6580287830916791614","latitude":50.0922094,"longitude":8.6968508},{"timestamp":"1675715157","device_id":"6580287830916791614","latitude":50.0922094,"longitude":8.6968508}];
+              function initMap() {
+                  var map = new google.maps.Map(document.getElementById('map'), {
+                  center: {lat: dataPoints[0]['latitude'], lng: dataPoints[0]['longitude']},
+                   zoom: 800
+              });
+              dataPoints.forEach((data, index) => {
+
+                var date = new Date(data['timestamp'] * 1000);
+                var formattedTime = date.toLocaleString('en-US', {timeZoneName: 'short'})
+                var marker;
+                
+                if(index === 0) {
+                  console.log('first')
+                  marker = new google.maps.Marker({
+                      position: { lat: data['latitude'], lng: data['longitude'] },
+                      map: map,
+                      title: formattedTime,
+                      zIndex:99999999,
+                      icon: {
+                          url: "http://maps.google.com/mapfiles/ms/icons/red-dot.png"
+                      }
+                  });
+                } else {
+                  marker = new google.maps.Marker({
+                      position: { lat: data['latitude'], lng: data['longitude'] },
+                      map: map,
+                      title: formattedTime,
+                      icon: {
+                          url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+                      }
+                  });
+                }
+            
+              })
+            }
+          </script>
+      </head>
+      <body onload='initMap()'>
+          <div id='map' style='height: 900px; width: 100%;'></div>
+          <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAFjmwW7a9Z_MnjMtn4lcGwJsJgiiUZ66k&callback=initMap'></script>
+      </body>
+    </html>

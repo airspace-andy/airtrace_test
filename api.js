@@ -4,7 +4,7 @@ const process = require('process');
 const {open} = require('sqlite');
 const sqlite3 = require('sqlite3');
 const API_KEY="AIzaSyAFjmwW7a9Z_MnjMtn4lcGwJsJgiiUZ66k"
-const filename = "/Users/deepu/Shiprec/Node/database.sqlite3"
+const filename = "/mnt/NAS/Airspace/NodeScript/database.sqlite3"
 
 const cron = require('node-cron');
 const [first, second, interval, ...deviceIds] = process.argv;
