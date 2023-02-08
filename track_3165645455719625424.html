@@ -7,7 +7,7 @@
               function initMap() {
                   var map = new google.maps.Map(document.getElementById('map'), {
                   center: {lat: dataPoints[0]['latitude'], lng: dataPoints[0]['longitude']},
-                   zoom: 18
+                   zoom: 800
               });
               dataPoints.forEach((data, index) => {
 
@@ -36,7 +36,29 @@
                       }
                   });
                 }
-            
+                var infowindow = new google.maps.InfoWindow();
+
+                var geocoder = new google.maps.Geocoder;
+                var myLatLng = {lat: data['latitude'], lng: data['longitude']};
+                
+                google.maps.event.addListener(marker, 'click', function() {
+                  geocoder.geocode({'location': myLatLng}, function(results, status) {
+                    if (status === 'OK') {
+                      if (results[0]) {
+                        infowindow.setContent(results[0].formatted_address + "<br>" + marker.title);
+                        infowindow.open(map, marker);
+                      } else {
+                        window.alert('No results found');
+                      }
+                    } else {
+                      window.alert('Geocoder failed due to: ' + status);
+                    }
+                });
+              })
+                
+                google.maps.event.addListener(map, 'click', function() {
+                  infowindow.close();
+                });
               })
             }
           </script>
