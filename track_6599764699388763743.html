@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+    <html>
+      <head>
+          <title>Google Maps API</title>
+          <script>
+              var dataPoints = [{"timestamp":"1675862177","device_id":"6599764699388763743","latitude":50.0936616,"longitude":8.6353998}];
+              function initMap() {
+                  var map = new google.maps.Map(document.getElementById('map'), {
+                  center: {lat: dataPoints[0]['latitude'], lng: dataPoints[0]['longitude']},
+                   zoom: 18
+              });
+              dataPoints.forEach((data, index) => {
+
+                var date = new Date(data['timestamp'] * 1000);
+                var formattedTime = date.toLocaleString('en-US', {timeZoneName: 'short'})
+                var marker;
+                
+                if(index === 0) {
+                  console.log('first')
+                  marker = new google.maps.Marker({
+                      position: { lat: data['latitude'], lng: data['longitude'] },
+                      map: map,
+                      title: formattedTime,
+                      zIndex:99999999,
+                      icon: {
+                          url: "http://maps.google.com/mapfiles/ms/icons/red-dot.png"
+                      }
+                  });
+                } else {
+                  marker = new google.maps.Marker({
+                      position: { lat: data['latitude'], lng: data['longitude'] },
+                      map: map,
+                      title: formattedTime,
+                      icon: {
+                          url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+                      }
+                  });
+                }
+                var infowindow = new google.maps.InfoWindow();
+
+                var geocoder = new google.maps.Geocoder;
+                var myLatLng = {lat: data['latitude'], lng: data['longitude']};
+                
+                google.maps.event.addListener(marker, 'click', function() {
+                  geocoder.geocode({'location': myLatLng}, function(results, status) {
+                    if (status === 'OK') {
+                      if (results[0]) {
+                        infowindow.setContent(results[0].formatted_address + "<br>" + marker.title);
+                        infowindow.open(map, marker);
+                      } else {
+                        window.alert('No results found');
+                      }
+                    } else {
+                      window.alert('Geocoder failed due to: ' + status);
+                    }
+                });
+              })
+                
+                google.maps.event.addListener(map, 'click', function() {
+                  infowindow.close();
+                });
+              })
+            }
+          </script>
+      </head>
+      <body onload='initMap()'>
+          <div id='map' style='height: 1200px; width: 100%;'></div>
+          <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAFjmwW7a9Z_MnjMtn4lcGwJsJgiiUZ66k&callback=initMap'></script>
+      </body>
+    </html>
