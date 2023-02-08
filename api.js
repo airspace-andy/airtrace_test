@@ -60,7 +60,7 @@ cron.schedule("*/5 * * * *", function() {
               function initMap() {
                   var map = new google.maps.Map(document.getElementById('map'), {
                   center: {lat: dataPoints[0]['latitude'], lng: dataPoints[0]['longitude']},
-                   zoom: 80
+                   zoom: 18
               });
               dataPoints.forEach((data, index) => {
 
@@ -95,7 +95,7 @@ cron.schedule("*/5 * * * *", function() {
           </script>
       </head>
       <body onload='initMap()'>
-          <div id='map' style='height: 1080px; width: 100%;'></div>
+          <div id='map' style='height: 1200px; width: 100%;'></div>
           <script src='https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap'></script>
       </body>
     </html>`;
