@@ -99,3 +99,343 @@ Updated correctly
 Updated correctly
 Updated correctly
 Updated correctly
+Updated correctly
+Updated correctly
+Updated correctly
+Updated correctly
+AxiosError: getaddrinfo EAI_AGAIN track.shiprec.io
+    at Function.AxiosError.from (/mnt/NAS/Airspace/NodeScript/node_modules/axios/dist/node/axios.cjs:825:14)
+    at RedirectableRequest.handleRequestError (/mnt/NAS/Airspace/NodeScript/node_modules/axios/dist/node/axios.cjs:2961:25)
+    at RedirectableRequest.emit (events.js:314:20)
+    at ClientRequest.eventHandlers.<computed> (/mnt/NAS/Airspace/NodeScript/node_modules/follow-redirects/index.js:14:24)
+    at ClientRequest.emit (events.js:314:20)
+    at TLSSocket.socketErrorListener (_http_client.js:427:9)
+    at TLSSocket.emit (events.js:314:20)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  hostname: 'track.shiprec.io',
+  syscall: 'getaddrinfo',
+  code: 'EAI_AGAIN',
+  errno: 'EAI_AGAIN',
+  config: {
+    transitional: {
+      silentJSONParsing: true,
+      forcedJSONParsing: true,
+      clarifyTimeoutError: false
+    },
+    adapter: [ 'xhr', 'http' ],
+    transformRequest: [ [Function: transformRequest] ],
+    transformResponse: [ [Function: transformResponse] ],
+    timeout: 0,
+    xsrfCookieName: 'XSRF-TOKEN',
+    xsrfHeaderName: 'X-XSRF-TOKEN',
+    maxContentLength: -1,
+    maxBodyLength: -1,
+    env: { FormData: [Function], Blob: null },
+    validateStatus: [Function: validateStatus],
+    headers: AxiosHeaders {
+      Accept: 'application/json, text/plain, */*',
+      'User-Agent': 'axios/1.3.1',
+      'Accept-Encoding': 'gzip, compress, deflate, br'
+    },
+    method: 'get',
+    url: 'https://track.shiprec.io/api/packages/track?token=3165645455719625424&interval_hours=1',
+    data: undefined
+  },
+  request: Writable {
+    _writableState: WritableState {
+      objectMode: false,
+      highWaterMark: 16384,
+      finalCalled: false,
+      needDrain: false,
+      ending: false,
+      ended: false,
+      finished: false,
+      destroyed: false,
+      decodeStrings: true,
+      defaultEncoding: 'utf8',
+      length: 0,
+      writing: false,
+      corked: 0,
+      sync: true,
+      bufferProcessing: false,
+      onwrite: [Function: bound onwrite],
+      writecb: null,
+      writelen: 0,
+      afterWriteTickInfo: null,
+      bufferedRequest: null,
+      lastBufferedRequest: null,
+      pendingcb: 0,
+      prefinished: false,
+      errorEmitted: false,
+      emitClose: true,
+      autoDestroy: false,
+      bufferedRequestCount: 0,
+      corkedRequestsFree: [Object]
+    },
+    writable: true,
+    _events: [Object: null prototype] {
+      response: [Function: handleResponse],
+      error: [Function: handleRequestError],
+      socket: [Function: handleRequestSocket]
+    },
+    _eventsCount: 3,
+    _maxListeners: undefined,
+    _options: {
+      maxRedirects: 21,
+      maxBodyLength: Infinity,
+      protocol: 'https:',
+      path: '/api/packages/track?token=3165645455719625424&interval_hours=1',
+      method: 'GET',
+      headers: [Object: null prototype],
+      agents: [Object],
+      auth: undefined,
+      beforeRedirect: [Function: dispatchBeforeRedirect],
+      beforeRedirects: [Object],
+      hostname: 'track.shiprec.io',
+      port: '',
+      agent: undefined,
+      nativeProtocols: [Object],
+      pathname: '/api/packages/track',
+      search: '?token=3165645455719625424&interval_hours=1'
+    },
+    _ended: true,
+    _ending: true,
+    _redirectCount: 0,
+    _redirects: [],
+    _requestBodyLength: 0,
+    _requestBodyBuffers: [],
+    _onNativeResponse: [Function],
+    _currentRequest: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      _last: true,
+      chunkedEncoding: false,
+      shouldKeepAlive: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: false,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      _contentLength: 0,
+      _hasBody: true,
+      _trailer: '',
+      finished: true,
+      _headerSent: true,
+      socket: [TLSSocket],
+      connection: [TLSSocket],
+      _header: 'GET /api/packages/track?token=3165645455719625424&interval_hours=1 HTTP/1.1\r\n' +
+        'Accept: application/json, text/plain, */*\r\n' +
+        'User-Agent: axios/1.3.1\r\n' +
+        'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+        'Host: track.shiprec.io\r\n' +
+        'Connection: close\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: noopPendingOutput],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'GET',
+      insecureHTTPParser: undefined,
+      path: '/api/packages/track?token=3165645455719625424&interval_hours=1',
+      _ended: false,
+      res: null,
+      aborted: false,
+      timeoutCb: null,
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: 'track.shiprec.io',
+      protocol: 'https:',
+      _redirectable: [Circular],
+      [Symbol(kCapture)]: false,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype]
+    },
+    _currentUrl: 'https://track.shiprec.io/api/packages/track?token=3165645455719625424&interval_hours=1',
+    [Symbol(kCapture)]: false
+  },
+  cause: Error: getaddrinfo EAI_AGAIN track.shiprec.io
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:66:26) {
+    errno: 'EAI_AGAIN',
+    code: 'EAI_AGAIN',
+    syscall: 'getaddrinfo',
+    hostname: 'track.shiprec.io'
+  }
+}
+AxiosError: getaddrinfo EAI_AGAIN track.shiprec.io
+    at Function.AxiosError.from (/mnt/NAS/Airspace/NodeScript/node_modules/axios/dist/node/axios.cjs:825:14)
+    at RedirectableRequest.handleRequestError (/mnt/NAS/Airspace/NodeScript/node_modules/axios/dist/node/axios.cjs:2961:25)
+    at RedirectableRequest.emit (events.js:314:20)
+    at ClientRequest.eventHandlers.<computed> (/mnt/NAS/Airspace/NodeScript/node_modules/follow-redirects/index.js:14:24)
+    at ClientRequest.emit (events.js:314:20)
+    at TLSSocket.socketErrorListener (_http_client.js:427:9)
+    at TLSSocket.emit (events.js:314:20)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  hostname: 'track.shiprec.io',
+  syscall: 'getaddrinfo',
+  code: 'EAI_AGAIN',
+  errno: 'EAI_AGAIN',
+  config: {
+    transitional: {
+      silentJSONParsing: true,
+      forcedJSONParsing: true,
+      clarifyTimeoutError: false
+    },
+    adapter: [ 'xhr', 'http' ],
+    transformRequest: [ [Function: transformRequest] ],
+    transformResponse: [ [Function: transformResponse] ],
+    timeout: 0,
+    xsrfCookieName: 'XSRF-TOKEN',
+    xsrfHeaderName: 'X-XSRF-TOKEN',
+    maxContentLength: -1,
+    maxBodyLength: -1,
+    env: { FormData: [Function], Blob: null },
+    validateStatus: [Function: validateStatus],
+    headers: AxiosHeaders {
+      Accept: 'application/json, text/plain, */*',
+      'User-Agent': 'axios/1.3.1',
+      'Accept-Encoding': 'gzip, compress, deflate, br'
+    },
+    method: 'get',
+    url: 'https://track.shiprec.io/api/packages/track?token=9081139280528986337&interval_hours=1',
+    data: undefined
+  },
+  request: Writable {
+    _writableState: WritableState {
+      objectMode: false,
+      highWaterMark: 16384,
+      finalCalled: false,
+      needDrain: false,
+      ending: false,
+      ended: false,
+      finished: false,
+      destroyed: false,
+      decodeStrings: true,
+      defaultEncoding: 'utf8',
+      length: 0,
+      writing: false,
+      corked: 0,
+      sync: true,
+      bufferProcessing: false,
+      onwrite: [Function: bound onwrite],
+      writecb: null,
+      writelen: 0,
+      afterWriteTickInfo: null,
+      bufferedRequest: null,
+      lastBufferedRequest: null,
+      pendingcb: 0,
+      prefinished: false,
+      errorEmitted: false,
+      emitClose: true,
+      autoDestroy: false,
+      bufferedRequestCount: 0,
+      corkedRequestsFree: [Object]
+    },
+    writable: true,
+    _events: [Object: null prototype] {
+      response: [Function: handleResponse],
+      error: [Function: handleRequestError],
+      socket: [Function: handleRequestSocket]
+    },
+    _eventsCount: 3,
+    _maxListeners: undefined,
+    _options: {
+      maxRedirects: 21,
+      maxBodyLength: Infinity,
+      protocol: 'https:',
+      path: '/api/packages/track?token=9081139280528986337&interval_hours=1',
+      method: 'GET',
+      headers: [Object: null prototype],
+      agents: [Object],
+      auth: undefined,
+      beforeRedirect: [Function: dispatchBeforeRedirect],
+      beforeRedirects: [Object],
+      hostname: 'track.shiprec.io',
+      port: '',
+      agent: undefined,
+      nativeProtocols: [Object],
+      pathname: '/api/packages/track',
+      search: '?token=9081139280528986337&interval_hours=1'
+    },
+    _ended: true,
+    _ending: true,
+    _redirectCount: 0,
+    _redirects: [],
+    _requestBodyLength: 0,
+    _requestBodyBuffers: [],
+    _onNativeResponse: [Function],
+    _currentRequest: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      _last: true,
+      chunkedEncoding: false,
+      shouldKeepAlive: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: false,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      _contentLength: 0,
+      _hasBody: true,
+      _trailer: '',
+      finished: true,
+      _headerSent: true,
+      socket: [TLSSocket],
+      connection: [TLSSocket],
+      _header: 'GET /api/packages/track?token=9081139280528986337&interval_hours=1 HTTP/1.1\r\n' +
+        'Accept: application/json, text/plain, */*\r\n' +
+        'User-Agent: axios/1.3.1\r\n' +
+        'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+        'Host: track.shiprec.io\r\n' +
+        'Connection: close\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: noopPendingOutput],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'GET',
+      insecureHTTPParser: undefined,
+      path: '/api/packages/track?token=9081139280528986337&interval_hours=1',
+      _ended: false,
+      res: null,
+      aborted: false,
+      timeoutCb: null,
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: 'track.shiprec.io',
+      protocol: 'https:',
+      _redirectable: [Circular],
+      [Symbol(kCapture)]: false,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype]
+    },
+    _currentUrl: 'https://track.shiprec.io/api/packages/track?token=9081139280528986337&interval_hours=1',
+    [Symbol(kCapture)]: false
+  },
+  cause: Error: getaddrinfo EAI_AGAIN track.shiprec.io
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:66:26) {
+    errno: 'EAI_AGAIN',
+    code: 'EAI_AGAIN',
+    syscall: 'getaddrinfo',
+    hostname: 'track.shiprec.io'
+  }
+}
