@@ -1452,3 +1452,17 @@ Updated correctly
 Updated correctly
 Updated correctly
 Updated correctly
+Updated correctly
+Updated correctly
+Updated correctly
+Updated correctly
+Updated correctly
+[Error: SQLITE_BUSY: database is locked] {
+  errno: 5,
+  code: 'SQLITE_BUSY'
+}
+[Error: SQLITE_BUSY: database is locked] {
+  errno: 5,
+  code: 'SQLITE_BUSY'
+}
+Updated correctly
